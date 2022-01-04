@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Yemek Tarifim-->
+        <!--Yemek Tarifleri-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="AnasayfaViewController" customModule="YemekTarifim" customModuleProvider="target" sceneMemberID="viewController">
@@ -193,7 +193,7 @@
                             <constraint firstItem="T3S-MW-ofl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xm5-0p-Blh"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Yemek Tarifim" largeTitleDisplayMode="always" id="Z4L-7t-YuP"/>
+                    <navigationItem key="navigationItem" title="Yemek Tarifleri" largeTitleDisplayMode="always" id="Z4L-7t-YuP"/>
                     <connections>
                         <outlet property="foodCollectionView" destination="T3S-MW-ofl" id="6hX-i6-RBM"/>
                         <outlet property="trendCollectionView" destination="p9w-AC-i2y" id="d3w-su-uDF"/>
