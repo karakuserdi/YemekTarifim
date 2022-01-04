@@ -12,7 +12,6 @@ class Trends{
     var trend_ad:String?
     var trend_resim:String?
     
-    
     init(){}
     
     init(trend_id:Int,trend_ad:String,trend_resim:String){
