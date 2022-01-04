@@ -1,5 +1,5 @@
 //
-//  AnasayfaViewController.swift
+//  HomeViewController.swift
 //  YemekTarifim
 ///Users/rizaerdikarakus/Desktop/Bootcamp/CollectionDeneme/CollectionDeneme.xcodeproj
 //  Created by Riza Erdi Karakus on 4.01.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AnasayfaViewController: UIViewController {
+class HomeViewController: UIViewController {
 
     @IBOutlet weak var trendCollectionView: UICollectionView!
     @IBOutlet weak var foodCollectionView: UICollectionView!
@@ -74,7 +74,7 @@ class AnasayfaViewController: UIViewController {
     }
 }
 
-extension AnasayfaViewController: UICollectionViewDelegate,UICollectionViewDataSource{
+extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView.tag == 0{
             return trendListesi.count
