@@ -16,6 +16,9 @@
 		D4769AB227845DA40087A613 /* TrendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4769AB127845DA40087A613 /* TrendCell.swift */; };
 		D4769AB5278463220087A613 /* Trends.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4769AB4278463220087A613 /* Trends.swift */; };
 		D4769AB72784C95F0087A613 /* FoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4769AB62784C95F0087A613 /* FoodCell.swift */; };
+		D4769ABA2784D74C0087A613 /* FoodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4769AB92784D74C0087A613 /* FoodViewModel.swift */; };
+		D4769ABC2784D78B0087A613 /* Foods.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4769ABB2784D78B0087A613 /* Foods.swift */; };
+		D4769ABE2784DA9B0087A613 /* TrendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4769ABD2784DA9B0087A613 /* TrendViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		D4769AB127845DA40087A613 /* TrendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendCell.swift; sourceTree = "<group>"; };
 		D4769AB4278463220087A613 /* Trends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trends.swift; sourceTree = "<group>"; };
 		D4769AB62784C95F0087A613 /* FoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCell.swift; sourceTree = "<group>"; };
+		D4769AB92784D74C0087A613 /* FoodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodViewModel.swift; sourceTree = "<group>"; };
+		D4769ABB2784D78B0087A613 /* Foods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Foods.swift; sourceTree = "<group>"; };
+		D4769ABD2784DA9B0087A613 /* TrendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,7 @@
 		D41FBEE127830C07003C1782 /* YemekTarifim */ = {
 			isa = PBXGroup;
 			children = (
+				D4769AB82784D7300087A613 /* viewmodel */,
 				D4769AB32784630A0087A613 /* models */,
 				D4769AB027845D870087A613 /* view */,
 				D4769AAD27845C6C0087A613 /* controllers */,
@@ -96,8 +103,18 @@
 			isa = PBXGroup;
 			children = (
 				D4769AB4278463220087A613 /* Trends.swift */,
+				D4769ABB2784D78B0087A613 /* Foods.swift */,
 			);
 			path = models;
+			sourceTree = "<group>";
+		};
+		D4769AB82784D7300087A613 /* viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				D4769AB92784D74C0087A613 /* FoodViewModel.swift */,
+				D4769ABD2784DA9B0087A613 /* TrendViewModel.swift */,
+			);
+			path = viewmodel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,7 +189,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D41FBEE327830C07003C1782 /* AppDelegate.swift in Sources */,
+				D4769ABC2784D78B0087A613 /* Foods.swift in Sources */,
 				D4769AB72784C95F0087A613 /* FoodCell.swift in Sources */,
+				D4769ABA2784D74C0087A613 /* FoodViewModel.swift in Sources */,
+				D4769ABE2784DA9B0087A613 /* TrendViewModel.swift in Sources */,
 				D4769AB5278463220087A613 /* Trends.swift in Sources */,
 				D4769AAF27845D4F0087A613 /* AnasayfaViewController.swift in Sources */,
 				D41FBEE527830C07003C1782 /* SceneDelegate.swift in Sources */,

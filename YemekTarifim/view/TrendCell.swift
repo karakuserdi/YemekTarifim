@@ -9,6 +9,12 @@ import UIKit
 
 class TrendCell: UICollectionViewCell {
     
+    var trend:Trends?{
+        didSet{
+            configure()
+        }
+    }
+    
     @IBOutlet weak var trendFoodImageView: UIImageView!
     @IBOutlet weak var trendView: UIView!
     
@@ -16,7 +22,6 @@ class TrendCell: UICollectionViewCell {
     @IBOutlet weak var foodSubLabel: UILabel!
     @IBOutlet weak var calLabel: UILabel!
     @IBOutlet weak var likeButton: UIButton!
-    
     
     
     override init(frame: CGRect) {
@@ -33,6 +38,18 @@ class TrendCell: UICollectionViewCell {
         trendView.layer.shadowOpacity = 0.5
         
         trendView.layer.masksToBounds = false
+
+    }
+    
+    func configure(){
+        guard let trend = trend else {
+            return
+        }
+        let viewModel = TrendViewModel(trend: trend)
+        
+        trendFoodImageView.image = UIImage(named: viewModel.trendImageView)
+        foodLabel.text = viewModel.trendName
+        foodSubLabel.text = viewModel.trendSubname
 
     }
 

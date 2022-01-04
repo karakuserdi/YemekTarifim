@@ -9,14 +9,16 @@ import Foundation
 
 class Trends{
     var trend_id:Int?
-    var trend_ad:String?
-    var trend_resim:String?
+    var trend_name:String?
+    var trend_subname:String?
+    var trend_image:String?
     
     init(){}
     
-    init(trend_id:Int,trend_ad:String,trend_resim:String){
+    init(trend_id:Int,trend_name:String,trend_subname:String,trend_image:String){
         self.trend_id = trend_id
-        self.trend_ad = trend_ad
-        self.trend_resim = trend_resim
+        self.trend_name = trend_name
+        self.trend_subname = trend_subname
+        self.trend_image = trend_image
     }
 }

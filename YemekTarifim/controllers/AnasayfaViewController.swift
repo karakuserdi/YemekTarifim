@@ -13,29 +13,29 @@ class AnasayfaViewController: UIViewController {
     @IBOutlet weak var foodCollectionView: UICollectionView!
     
     var trendListesi = [Trends]()
-    var foodListesi = [Trends]()
+    var foodListesi = [Food]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionUI()
         
-        let t1 = Trends(trend_id: 1, trend_ad: "Yemek 4", trend_resim: "yemek7")
-        let t2 = Trends(trend_id: 2, trend_ad: "Yemek 7", trend_resim: "yemek7")
-        let t3 = Trends(trend_id: 3, trend_ad: "Yemek 4", trend_resim: "yemek7")
-        let t4 = Trends(trend_id: 4, trend_ad: "Yemek 7", trend_resim: "yemek7")
-        let t5 = Trends(trend_id: 5, trend_ad: "Yemek 4", trend_resim: "yemek7")
-        let t6 = Trends(trend_id: 6, trend_ad: "Yemek 7", trend_resim: "yemek7")
-        let t7 = Trends(trend_id: 7, trend_ad: "Yemek 4", trend_resim: "yemek7")
+        let t1 = Trends(trend_id: 1, trend_name: "Chopped", trend_subname: "Scallions & radishes", trend_image: "yemek7")
+        let t2 = Trends(trend_id: 2, trend_name: "Chopped Spring", trend_subname: "Scallions & radishes", trend_image: "yemek7")
+        let t3 = Trends(trend_id: 3, trend_name: "Spring", trend_subname: "Scallions & radishes", trend_image: "yemek7")
+        let t4 = Trends(trend_id: 4, trend_name: "Chopped Spring", trend_subname: "Scallions & radishes", trend_image: "yemek7")
+        let t5 = Trends(trend_id: 5, trend_name: "Chopped Spring", trend_subname: "Scallions & radishes", trend_image: "yemek7")
+        let t6 = Trends(trend_id: 6, trend_name: "Chopped Spring", trend_subname: "Scallions & radishes", trend_image: "yemek7")
+        let t7 = Trends(trend_id: 7, trend_name: "Chopped Spring", trend_subname: "Scallions & radishes", trend_image: "yemek7")
         
         trendListesi = [t1,t2,t3,t4,t5,t6,t7]
         
-        let f1 = Trends(trend_id: 1, trend_ad: "Yemek 4", trend_resim: "yemek7")
-        let f2 = Trends(trend_id: 2, trend_ad: "Yemek 7", trend_resim: "yemek7")
-        let f3 = Trends(trend_id: 3, trend_ad: "Yemek 4", trend_resim: "yemek7")
-        let f4 = Trends(trend_id: 4, trend_ad: "Yemek 7", trend_resim: "yemek7")
-        let f5 = Trends(trend_id: 5, trend_ad: "Yemek 4", trend_resim: "yemek7")
-        let f6 = Trends(trend_id: 6, trend_ad: "Yemek 7", trend_resim: "yemek7")
-        let f7 = Trends(trend_id: 7, trend_ad: "Yemek 4", trend_resim: "yemek7")
+        let f1 = Food(food_id: 1, food_name: "Yemek 4", food_image: "yemek7")
+        let f2 = Food(food_id: 2, food_name: "Yemek 7", food_image: "yemek7")
+        let f3 = Food(food_id: 3, food_name: "Yemek 4", food_image: "yemek7")
+        let f4 = Food(food_id: 4, food_name: "Yemek 7", food_image: "yemek7")
+        let f5 = Food(food_id: 5, food_name: "Yemek 4", food_image: "yemek7")
+        let f6 = Food(food_id: 6, food_name: "Yemek 7", food_image: "yemek7")
+        let f7 = Food(food_id: 7, food_name: "Yemek 4", food_image: "yemek7")
         
         foodListesi = [f1,f2,f3,f4,f5,f6,f7]
         
@@ -88,16 +88,15 @@ extension AnasayfaViewController: UICollectionViewDelegate,UICollectionViewDataS
             
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "trendCell", for: indexPath) as! TrendCell
             let trend = trendListesi[indexPath.row]
-            cell.trendFoodImageView.image = UIImage(named: trend.trend_resim!)
             
+            cell.trend = trend
             return cell
             
         }else{
             
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "foodCell", for: indexPath) as! FoodCell
             let food = foodListesi[indexPath.row]
-            cell.foodImageView.image = UIImage(named: food.trend_resim!)
-            cell.foodNameLabel.text = food.trend_ad
+            cell.food = food
             return cell
         }
     }
