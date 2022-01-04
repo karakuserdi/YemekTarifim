@@ -12,27 +12,15 @@ struct TrendViewModel{
     let tred:Trends
     
     var trendImageView: String{
-        if let img = tred.trend_image{
-            return img
-        }
-        
-        return ""
+        return tred.trend_image ?? ""
     }
     
     var trendName: String{
-        if let name = tred.trend_name{
-            return name
-        }
-        
-        return ""
+        return tred.trend_name ?? ""
     }
     
     var trendSubname: String{
-        if let name = tred.trend_subname{
-            return name
-        }
-        
-        return ""
+        return tred.trend_subname ?? ""
     }
     
     
