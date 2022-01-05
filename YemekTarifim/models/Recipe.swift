@@ -7,11 +7,11 @@
 
 import Foundation
 
-class Recipe{
-    var recipe_id:Int?
+class Recipe:Codable{
+    var recipe_id:String?
     var recipe_contents:[[String]]?
     
-    init(recipe_id:Int,recipe_contents:[[String]]){
+    init(recipe_id:String,recipe_contents:[[String]]){
         self.recipe_id = recipe_id
         self.recipe_contents = recipe_contents
     }

@@ -42,6 +42,7 @@ class FoodDetailsViewController: UIViewController {
                 likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
             }
             foodNameLabel.text = food.food_name
+            foodImageView.image = UIImage(named: food.food_image!)
         }
         
         configureUI()
@@ -97,6 +98,7 @@ extension FoodDetailsViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "foodDetailsCell", for: indexPath) as! FoodDetailCell
         let recipe = food?.recipe?.recipe_contents![indexPath.section][indexPath.row]
+        
         cell.detailsLabel.text = recipe
         
         return cell

@@ -7,8 +7,8 @@
 
 import Foundation
 
-class Food{
-    var food_id:Int?
+class Food:Codable{
+    var food_id:String?
     var food_name:String?
     var food_image:String?
     var food_isLiked:String?
@@ -17,7 +17,7 @@ class Food{
     
     init(){}
     
-    init(food_id:Int ,food_name:String ,food_image:String,food_isLiked:String,recipe:Recipe){
+    init(food_id:String ,food_name:String ,food_image:String,food_isLiked:String,recipe:Recipe){
         self.food_id = food_id
         self.food_name = food_name
         self.food_image = food_image

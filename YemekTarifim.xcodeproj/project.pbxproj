@@ -15,11 +15,14 @@
 		D421948D27857230004C0580 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D421948C27857230004C0580 /* Extensions.swift */; };
 		D421948F2785856B004C0580 /* FoodDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D421948E2785856B004C0580 /* FoodDetailCell.swift */; };
 		D421949227859D3D004C0580 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = D421949127859D3D004C0580 /* Recipe.swift */; };
+		D42194942785B197004C0580 /* yemektarifim.json in Resources */ = {isa = PBXBuildFile; fileRef = D42194932785B197004C0580 /* yemektarifim.json */; };
+		D42194962785B20A004C0580 /* FoodService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42194952785B20A004C0580 /* FoodService.swift */; };
 		D4769AAF27845D4F0087A613 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4769AAE27845D4F0087A613 /* HomeViewController.swift */; };
 		D4769AB227845DA40087A613 /* TrendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4769AB127845DA40087A613 /* TrendCell.swift */; };
 		D4769AB72784C95F0087A613 /* FoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4769AB62784C95F0087A613 /* FoodCell.swift */; };
 		D4769ABA2784D74C0087A613 /* FoodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4769AB92784D74C0087A613 /* FoodViewModel.swift */; };
-		D4769ABC2784D78B0087A613 /* Foods.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4769ABB2784D78B0087A613 /* Foods.swift */; };
+		D4769ABC2784D78B0087A613 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4769ABB2784D78B0087A613 /* Food.swift */; };
+		D4B93F7D27863D6D00785DF8 /* FoodResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B93F7C27863D6D00785DF8 /* FoodResult.swift */; };
 		D4C60B892784F177006BC757 /* FoodDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C60B882784F177006BC757 /* FoodDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,11 +37,14 @@
 		D421948C27857230004C0580 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D421948E2785856B004C0580 /* FoodDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailCell.swift; sourceTree = "<group>"; };
 		D421949127859D3D004C0580 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		D42194932785B197004C0580 /* yemektarifim.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = yemektarifim.json; sourceTree = "<group>"; };
+		D42194952785B20A004C0580 /* FoodService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodService.swift; sourceTree = "<group>"; };
 		D4769AAE27845D4F0087A613 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D4769AB127845DA40087A613 /* TrendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendCell.swift; sourceTree = "<group>"; };
 		D4769AB62784C95F0087A613 /* FoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCell.swift; sourceTree = "<group>"; };
 		D4769AB92784D74C0087A613 /* FoodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodViewModel.swift; sourceTree = "<group>"; };
-		D4769ABB2784D78B0087A613 /* Foods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Foods.swift; sourceTree = "<group>"; };
+		D4769ABB2784D78B0087A613 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
+		D4B93F7C27863D6D00785DF8 /* FoodResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodResult.swift; sourceTree = "<group>"; };
 		D4C60B882784F177006BC757 /* FoodDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,6 +86,7 @@
 				D4769AAD27845C6C0087A613 /* controllers */,
 				D41FBEE227830C07003C1782 /* AppDelegate.swift */,
 				D41FBEE427830C07003C1782 /* SceneDelegate.swift */,
+				D42194932785B197004C0580 /* yemektarifim.json */,
 				D41FBEE827830C07003C1782 /* Main.storyboard */,
 				D41FBEEB27830C0A003C1782 /* Assets.xcassets */,
 				D41FBEED27830C0A003C1782 /* LaunchScreen.storyboard */,
@@ -99,6 +106,7 @@
 		D421949027859CC4004C0580 /* api */ = {
 			isa = PBXGroup;
 			children = (
+				D42194952785B20A004C0580 /* FoodService.swift */,
 			);
 			path = api;
 			sourceTree = "<group>";
@@ -125,8 +133,9 @@
 		D4769AB32784630A0087A613 /* models */ = {
 			isa = PBXGroup;
 			children = (
-				D4769ABB2784D78B0087A613 /* Foods.swift */,
+				D4769ABB2784D78B0087A613 /* Food.swift */,
 				D421949127859D3D004C0580 /* Recipe.swift */,
+				D4B93F7C27863D6D00785DF8 /* FoodResult.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -197,6 +206,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D42194942785B197004C0580 /* yemektarifim.json in Resources */,
 				D41FBEEF27830C0A003C1782 /* LaunchScreen.storyboard in Resources */,
 				D41FBEEC27830C0A003C1782 /* Assets.xcassets in Resources */,
 				D41FBEEA27830C07003C1782 /* Main.storyboard in Resources */,
@@ -211,7 +221,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D41FBEE327830C07003C1782 /* AppDelegate.swift in Sources */,
-				D4769ABC2784D78B0087A613 /* Foods.swift in Sources */,
+				D42194962785B20A004C0580 /* FoodService.swift in Sources */,
+				D4769ABC2784D78B0087A613 /* Food.swift in Sources */,
 				D4769AB72784C95F0087A613 /* FoodCell.swift in Sources */,
 				D4769ABA2784D74C0087A613 /* FoodViewModel.swift in Sources */,
 				D421948F2785856B004C0580 /* FoodDetailCell.swift in Sources */,
@@ -221,6 +232,7 @@
 				D421949227859D3D004C0580 /* Recipe.swift in Sources */,
 				D421948D27857230004C0580 /* Extensions.swift in Sources */,
 				D4769AB227845DA40087A613 /* TrendCell.swift in Sources */,
+				D4B93F7D27863D6D00785DF8 /* FoodResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

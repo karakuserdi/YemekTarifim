@@ -19,7 +19,6 @@ struct FoodViewModel{
         return ""
     }
     
-    
     var foodImageView: String{
         if let img = food.food_image{
             return img

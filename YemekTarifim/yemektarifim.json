@@ -1,0 +1,58 @@
+{
+    "food":[
+    {
+        "food_id":"1",
+        "food_name":"Mercimek Çorbası",
+        "food_image":"yemek7",
+        "food_isLiked":"false",
+        "recipe":{
+            "recipe_id":"1",
+            "recipe_contents":[["Soğan","ekmek","su"],["suyu iyice kaynat"]]
+        }
+    },
+    {
+        "food_id":"2",
+        "food_name":"Hamburger",
+        "food_image":"hamburger",
+        "food_isLiked":"true",
+        "recipe":{
+            "recipe_id":"2",
+            "recipe_contents":[["nar","elma","armut"],["elmayı ince ince kes"]]
+        }
+    },
+    {
+        "food_id":"3",
+        "food_name":"Mevsim Salata",
+        "food_image":"salata",
+        "food_isLiked":"false",
+        "recipe":{
+            "recipe_id":"2",
+            "recipe_contents":[["nar","elma","armut"],["elmayı ince ince kes"]]
+        }
+    },
+    {
+        "food_id":"4",
+        "food_name":"Dolma Biber",
+        "food_image":"dolmabiber",
+        "food_isLiked":"true",
+        "recipe":{
+            "recipe_id":"2",
+            "recipe_contents":[["nar","elma","armut"],["elmayı ince ince kes"]]
+        }
+    },
+    {
+        "food_id":"5",
+        "food_name":"Fırında Soslu Bütün Tavuk",
+        "food_image":"tavuk",
+        "food_isLiked":"true",
+        "recipe":{
+            "recipe_id":"2",
+            "recipe_contents":[
+                ["1 adet bütün tavuk","1 yemek kaşığı domates salçası","1 yemek kaşığı yoğurt","1 yemek kaşığı zeytinyağı","1 çay kaşığı tuz","1 çay kaşığı kırmızı toz biber","1 çay kaşığı kekik","Yarım çay kaşığı karabiber","1 kaşık un","4-5 adet defne yaprağı (isteğe bağlı)"],
+            ["İlk olarak tavuğun sosunu hazırlayalım. Bunun için uygun bi kap içerisine yoğurt, domates salçası, zeytinyağı, tuz, karabiber, kekik ve toz kırmızı biberi alarak güzelce karıştıralım. Ardından tavuğumuzu alalım, kalan tüylerini temizleyerek havlu kağıt yardımı ile kurulayalım. Hazırladığımız sosu tavuğun her yerine gelecek şekilde sürelim. Tavuğun kanat kısımlarının piştikçe açılmaması için kürdan ile sabitleyelim. Butları da ip yardımı ile çapraz bir şekilde bağlayarak fazla olan kısmını keselim. Tavuğumuzu 1 saat kadar buzdolabında dinlenmeye bırakalım. Büyük boy fırın torbasının içerisine unu alalım ve torbayı sallayarak her yerine ulaşmasını sağlayalım. Ardından fazla unu bir kaseye boşaltalım. Dinlendirdiğimiz tavuğumuzu fırın torbasına dikkatli bir şekilde yerleştirelim. 4-5 tane defne yaprağını da torbanın içerisine ilave edelim ve torbadan çıkan bağlama klipsi ile bağlayalım. Kürdan ile fırın torbamıza delikler açalım, fırın tepsimize yerleştirelim. Tavuğumuzu önceden ısıttığımız 200°C fırında 1 saat kadar pişmeye bırakalım. Sürenin sonunda tavuğumuzu fırından alalım ve 10 dakika bekletelim. Ardından fırın poşetinden çıkartalım ve servis tabağına alalım. Dilediğimiz şekilde süsleyerek servis edelim. Afiyet olsun!"]
+            ]
+        }
+    }
+    ]
+}
+
