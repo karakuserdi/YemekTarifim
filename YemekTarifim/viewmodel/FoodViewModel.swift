@@ -12,6 +12,14 @@ import UIKit
 struct FoodViewModel{
     let food:Food
     
+    var isLike:String{
+        if let isLiked = food.food_isLiked{
+            return isLiked
+        }
+        return ""
+    }
+    
+    
     var foodImageView: String{
         if let img = food.food_image{
             return img

@@ -12,13 +12,14 @@
 		D41FBEEA27830C07003C1782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D41FBEE827830C07003C1782 /* Main.storyboard */; };
 		D41FBEEC27830C0A003C1782 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D41FBEEB27830C0A003C1782 /* Assets.xcassets */; };
 		D41FBEEF27830C0A003C1782 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D41FBEED27830C0A003C1782 /* LaunchScreen.storyboard */; };
+		D421948D27857230004C0580 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D421948C27857230004C0580 /* Extensions.swift */; };
+		D421948F2785856B004C0580 /* FoodDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D421948E2785856B004C0580 /* FoodDetailCell.swift */; };
+		D421949227859D3D004C0580 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = D421949127859D3D004C0580 /* Recipe.swift */; };
 		D4769AAF27845D4F0087A613 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4769AAE27845D4F0087A613 /* HomeViewController.swift */; };
 		D4769AB227845DA40087A613 /* TrendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4769AB127845DA40087A613 /* TrendCell.swift */; };
-		D4769AB5278463220087A613 /* Trends.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4769AB4278463220087A613 /* Trends.swift */; };
 		D4769AB72784C95F0087A613 /* FoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4769AB62784C95F0087A613 /* FoodCell.swift */; };
 		D4769ABA2784D74C0087A613 /* FoodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4769AB92784D74C0087A613 /* FoodViewModel.swift */; };
 		D4769ABC2784D78B0087A613 /* Foods.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4769ABB2784D78B0087A613 /* Foods.swift */; };
-		D4769ABE2784DA9B0087A613 /* TrendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4769ABD2784DA9B0087A613 /* TrendViewModel.swift */; };
 		D4C60B892784F177006BC757 /* FoodDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C60B882784F177006BC757 /* FoodDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,13 +31,14 @@
 		D41FBEEB27830C0A003C1782 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D41FBEEE27830C0A003C1782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D41FBEF027830C0A003C1782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D421948C27857230004C0580 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		D421948E2785856B004C0580 /* FoodDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailCell.swift; sourceTree = "<group>"; };
+		D421949127859D3D004C0580 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		D4769AAE27845D4F0087A613 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D4769AB127845DA40087A613 /* TrendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendCell.swift; sourceTree = "<group>"; };
-		D4769AB4278463220087A613 /* Trends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trends.swift; sourceTree = "<group>"; };
 		D4769AB62784C95F0087A613 /* FoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCell.swift; sourceTree = "<group>"; };
 		D4769AB92784D74C0087A613 /* FoodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodViewModel.swift; sourceTree = "<group>"; };
 		D4769ABB2784D78B0087A613 /* Foods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Foods.swift; sourceTree = "<group>"; };
-		D4769ABD2784DA9B0087A613 /* TrendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendViewModel.swift; sourceTree = "<group>"; };
 		D4C60B882784F177006BC757 /* FoodDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,6 +72,8 @@
 		D41FBEE127830C07003C1782 /* YemekTarifim */ = {
 			isa = PBXGroup;
 			children = (
+				D421949027859CC4004C0580 /* api */,
+				D421948B27857222004C0580 /* utils */,
 				D4769AB82784D7300087A613 /* viewmodel */,
 				D4769AB32784630A0087A613 /* models */,
 				D4769AB027845D870087A613 /* view */,
@@ -82,6 +86,21 @@
 				D41FBEF027830C0A003C1782 /* Info.plist */,
 			);
 			path = YemekTarifim;
+			sourceTree = "<group>";
+		};
+		D421948B27857222004C0580 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				D421948C27857230004C0580 /* Extensions.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		D421949027859CC4004C0580 /* api */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = api;
 			sourceTree = "<group>";
 		};
 		D4769AAD27845C6C0087A613 /* controllers */ = {
@@ -98,6 +117,7 @@
 			children = (
 				D4769AB127845DA40087A613 /* TrendCell.swift */,
 				D4769AB62784C95F0087A613 /* FoodCell.swift */,
+				D421948E2785856B004C0580 /* FoodDetailCell.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -105,8 +125,8 @@
 		D4769AB32784630A0087A613 /* models */ = {
 			isa = PBXGroup;
 			children = (
-				D4769AB4278463220087A613 /* Trends.swift */,
 				D4769ABB2784D78B0087A613 /* Foods.swift */,
+				D421949127859D3D004C0580 /* Recipe.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -115,7 +135,6 @@
 			isa = PBXGroup;
 			children = (
 				D4769AB92784D74C0087A613 /* FoodViewModel.swift */,
-				D4769ABD2784DA9B0087A613 /* TrendViewModel.swift */,
 			);
 			path = viewmodel;
 			sourceTree = "<group>";
@@ -195,11 +214,12 @@
 				D4769ABC2784D78B0087A613 /* Foods.swift in Sources */,
 				D4769AB72784C95F0087A613 /* FoodCell.swift in Sources */,
 				D4769ABA2784D74C0087A613 /* FoodViewModel.swift in Sources */,
-				D4769ABE2784DA9B0087A613 /* TrendViewModel.swift in Sources */,
-				D4769AB5278463220087A613 /* Trends.swift in Sources */,
+				D421948F2785856B004C0580 /* FoodDetailCell.swift in Sources */,
 				D4769AAF27845D4F0087A613 /* HomeViewController.swift in Sources */,
 				D4C60B892784F177006BC757 /* FoodDetailsViewController.swift in Sources */,
 				D41FBEE527830C07003C1782 /* SceneDelegate.swift in Sources */,
+				D421949227859D3D004C0580 /* Recipe.swift in Sources */,
+				D421948D27857230004C0580 /* Extensions.swift in Sources */,
 				D4769AB227845DA40087A613 /* TrendCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

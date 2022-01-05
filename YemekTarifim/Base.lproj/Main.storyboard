@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="p9w-AC-i2y">
-                                <rect key="frame" x="0.0" y="140" width="414" height="200"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="200"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="07j-2G-Gb8"/>
@@ -124,7 +124,7 @@
                                 </cells>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="T3S-MW-ofl">
-                                <rect key="frame" x="0.0" y="340" width="414" height="522"/>
+                                <rect key="frame" x="0.0" y="288" width="414" height="574"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6Mg-mS-3H3">
                                     <size key="itemSize" width="128" height="128"/>
@@ -197,6 +197,7 @@
                     <connections>
                         <outlet property="foodCollectionView" destination="T3S-MW-ofl" id="6hX-i6-RBM"/>
                         <outlet property="trendCollectionView" destination="p9w-AC-i2y" id="d3w-su-uDF"/>
+                        <segue destination="AWg-2O-6h0" kind="presentation" identifier="toDetails" modalPresentationStyle="fullScreen" id="WYh-1D-Sbr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -220,6 +221,9 @@
                                         <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system">
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="backButtonPressed:" destination="AWg-2O-6h0" eventType="touchUpInside" id="AjI-pO-AI8"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Qw-ta-rMM">
                                         <rect key="frame" x="361.5" y="8" width="44.5" height="31"/>
@@ -227,6 +231,9 @@
                                         <buttonConfiguration key="configuration" style="plain" image="heart.fill" catalog="system">
                                             <color key="baseForegroundColor" systemColor="systemRedColor"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="likeButtonPressed:" destination="AWg-2O-6h0" eventType="touchUpInside" id="dz6-EQ-GTE"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Watercress Salad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="maQ-hx-DrK">
                                         <rect key="frame" x="16" y="65" width="378" height="29"/>
@@ -424,32 +431,77 @@
                                     </imageView>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZA5-fJ-lA8">
-                                <rect key="frame" x="16" y="446.5" width="93.5" height="20.5"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="oUe-6Z-cn7">
+                                <rect key="frame" x="0.0" y="432.5" width="414" height="429.5"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="foodDetailsCell" id="UU7-wX-bTR" customClass="FoodDetailCell" customModule="YemekTarifim" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UU7-wX-bTR" id="kfW-tf-kQv">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AyP-wh-u2z">
+                                                    <rect key="frame" x="20" y="11" width="374" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="AyP-wh-u2z" firstAttribute="leading" secondItem="kfW-tf-kQv" secondAttribute="leadingMargin" id="3RD-UL-MaF"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="AyP-wh-u2z" secondAttribute="bottom" id="6Vd-vP-w0v"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="AyP-wh-u2z" secondAttribute="trailing" id="E38-Rf-dhF"/>
+                                                <constraint firstItem="AyP-wh-u2z" firstAttribute="top" secondItem="kfW-tf-kQv" secondAttribute="topMargin" id="nms-BW-Qj5"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                        <connections>
+                                            <outlet property="detailsLabel" destination="AyP-wh-u2z" id="6bp-xn-FUh"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="85r-MY-UYD"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
+                            <constraint firstItem="oUe-6Z-cn7" firstAttribute="top" secondItem="EWa-ze-3OT" secondAttribute="bottom" constant="16" id="Arw-xt-Rlk"/>
                             <constraint firstItem="F2q-1p-nPK" firstAttribute="top" secondItem="85r-MY-UYD" secondAttribute="top" id="IAp-Nr-bed"/>
                             <constraint firstItem="F2q-1p-nPK" firstAttribute="trailing" secondItem="85r-MY-UYD" secondAttribute="trailing" id="RXF-AS-kUR"/>
                             <constraint firstItem="EWa-ze-3OT" firstAttribute="leading" secondItem="85r-MY-UYD" secondAttribute="leading" constant="16" id="TdA-Gl-b2D"/>
                             <constraint firstItem="R2V-YR-Jwb" firstAttribute="top" secondItem="F2q-1p-nPK" secondAttribute="bottom" constant="16" id="UeA-sC-t5N"/>
                             <constraint firstItem="R2V-YR-Jwb" firstAttribute="leading" secondItem="85r-MY-UYD" secondAttribute="leading" constant="16" id="aL4-oO-otW"/>
-                            <constraint firstItem="ZA5-fJ-lA8" firstAttribute="leading" secondItem="85r-MY-UYD" secondAttribute="leading" constant="16" id="h7E-1f-IiT"/>
+                            <constraint firstItem="85r-MY-UYD" firstAttribute="trailing" secondItem="oUe-6Z-cn7" secondAttribute="trailing" id="cWd-7I-Re0"/>
                             <constraint firstItem="EWa-ze-3OT" firstAttribute="top" secondItem="R2V-YR-Jwb" secondAttribute="bottom" constant="16" id="jTa-E2-T13"/>
                             <constraint firstItem="F2q-1p-nPK" firstAttribute="leading" secondItem="85r-MY-UYD" secondAttribute="leading" id="nXy-38-NQC"/>
+                            <constraint firstItem="85r-MY-UYD" firstAttribute="bottom" secondItem="oUe-6Z-cn7" secondAttribute="bottom" id="oW5-eV-HK1"/>
                             <constraint firstItem="85r-MY-UYD" firstAttribute="trailing" secondItem="EWa-ze-3OT" secondAttribute="trailing" constant="16" id="q5U-7n-dt0"/>
-                            <constraint firstItem="ZA5-fJ-lA8" firstAttribute="top" secondItem="EWa-ze-3OT" secondAttribute="bottom" constant="30" id="tjy-gh-JtZ"/>
+                            <constraint firstItem="oUe-6Z-cn7" firstAttribute="leading" secondItem="85r-MY-UYD" secondAttribute="leading" id="qIj-xD-vhq"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="rkb-x7-A6i"/>
+                    <connections>
+                        <outlet property="caloriesLabel" destination="wal-kX-ftg" id="5cM-gj-B1W"/>
+                        <outlet property="caloriesView" destination="Au6-qR-0LE" id="a5e-9h-bZ4"/>
+                        <outlet property="carbonLabel" destination="sUX-zy-ex3" id="RGx-tT-ujE"/>
+                        <outlet property="carbonView" destination="6H5-HW-EoW" id="iR0-nS-bsl"/>
+                        <outlet property="foodImageView" destination="by9-Qm-prN" id="CjE-aE-JQG"/>
+                        <outlet property="foodMaterialsLAbel" destination="pvr-tB-MnB" id="SPh-m0-hmh"/>
+                        <outlet property="foodNameLabel" destination="maQ-hx-DrK" id="LWb-Zf-pO5"/>
+                        <outlet property="likeButton" destination="9Qw-ta-rMM" id="8Mw-k2-BRq"/>
+                        <outlet property="nutrition2View" destination="Jzo-Zg-Aqh" id="9YE-aA-tkN"/>
+                        <outlet property="nutrition3View" destination="IfJ-25-KF9" id="dsy-lE-eL2"/>
+                        <outlet property="nutritionView" destination="k01-zb-EY3" id="alZ-Fz-w7M"/>
+                        <outlet property="proteinLabel" destination="Lqc-2c-yt2" id="Cu4-mh-Csl"/>
+                        <outlet property="proteinView" destination="OYY-uM-JLj" id="0OB-4o-Swb"/>
+                        <outlet property="tableView" destination="oUe-6Z-cn7" id="Gc7-Gb-5Yg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PsB-Zx-INp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1747.826086956522" y="88.392857142857139"/>
+            <point key="canvasLocation" x="1677" y="98"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Axy-fu-lso">

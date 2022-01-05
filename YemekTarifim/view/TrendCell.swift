@@ -9,7 +9,7 @@ import UIKit
 
 class TrendCell: UICollectionViewCell {
     
-    var trend:Trends?{
+    var food:Food?{
         didSet{
             configure()
         }
@@ -42,15 +42,11 @@ class TrendCell: UICollectionViewCell {
     }
     
     func configure(){
-        guard let trend = trend else {
-            return
-        }
-        let viewModel = TrendViewModel(trend: trend)
+        guard let food = food else {return}
+        let viewModel = FoodViewModel(food: food)
         
-        trendFoodImageView.image = UIImage(named: viewModel.trendImageView)
-        foodLabel.text = viewModel.trendName
-        foodSubLabel.text = viewModel.trendSubname
-
+        trendFoodImageView.image = UIImage(named: viewModel.foodImageView)
+        foodLabel.text = viewModel.foodName
     }
 
     required init?(coder: NSCoder) {

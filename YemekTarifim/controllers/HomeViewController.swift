@@ -1,7 +1,6 @@
 //
 //  HomeViewController.swift
 //  YemekTarifim
-///Users/rizaerdikarakus/Desktop/Bootcamp/CollectionDeneme/CollectionDeneme.xcodeproj
 //  Created by Riza Erdi Karakus on 4.01.2022.
 //
 
@@ -9,40 +8,37 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    //MARK: - Properties
     @IBOutlet weak var trendCollectionView: UICollectionView!
     @IBOutlet weak var foodCollectionView: UICollectionView!
     
-    var trendListesi = [Trends]()
+    var trendListesi = [Food]()
     var foodListesi = [Food]()
-
+    
+    
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionUI()
+        let r = Recipe(recipe_id: 1, recipe_contents: [["1 adet soğan", "1 kaşık zeytin yağı", "1 kuru makarna", "3 adet domates", "1/2 çay kaşığı kara biber"],["Zeytinleri irice doğruyoruz. Kapya biberi, maydanoz ve dereotunu minik minik doğruyoruz.Limon suyu, zeytinyağı ve nar ekşisini karıştırıyoruz. Diğer malzemelerle karıştırıp servis ediyoruz. Gerekirse tuz ilave ediyoruz. Afiyet Olsun."]])
         
-        let t1 = Trends(trend_id: 1, trend_name: "Chopped", trend_subname: "Scallions & radishes", trend_image: "yemek7")
-        let t2 = Trends(trend_id: 2, trend_name: "Chopped Spring", trend_subname: "Scallions & radishes", trend_image: "yemek7")
-        let t3 = Trends(trend_id: 3, trend_name: "Spring", trend_subname: "Scallions & radishes", trend_image: "yemek7")
-        let t4 = Trends(trend_id: 4, trend_name: "Chopped Spring", trend_subname: "Scallions & radishes", trend_image: "yemek7")
-        let t5 = Trends(trend_id: 5, trend_name: "Chopped Spring", trend_subname: "Scallions & radishes", trend_image: "yemek7")
-        let t6 = Trends(trend_id: 6, trend_name: "Chopped Spring", trend_subname: "Scallions & radishes", trend_image: "yemek7")
-        let t7 = Trends(trend_id: 7, trend_name: "Chopped Spring", trend_subname: "Scallions & radishes", trend_image: "yemek7")
-        
-        trendListesi = [t1,t2,t3,t4,t5,t6,t7]
-        
-        let f1 = Food(food_id: 1, food_name: "Yemek 4", food_image: "yemek7")
-        let f2 = Food(food_id: 2, food_name: "Yemek 7", food_image: "yemek7")
-        let f3 = Food(food_id: 3, food_name: "Yemek 4", food_image: "yemek7")
-        let f4 = Food(food_id: 4, food_name: "Yemek 7", food_image: "yemek7")
-        let f5 = Food(food_id: 5, food_name: "Yemek 4", food_image: "yemek7")
-        let f6 = Food(food_id: 6, food_name: "Yemek 7", food_image: "yemek7")
-        let f7 = Food(food_id: 7, food_name: "Yemek 4", food_image: "yemek7")
+        let f1 = Food(food_id: 1, food_name: "Yemek 1", food_image: "yemek7", food_isLiked: "false", recipe: r)
+        let f2 = Food(food_id: 2, food_name: "Yemek 2", food_image: "yemek7", food_isLiked: "false", recipe: r)
+        let f3 = Food(food_id: 3, food_name: "Yemek 3", food_image: "yemek7", food_isLiked: "true", recipe: r)
+        let f4 = Food(food_id: 4, food_name: "Yemek 4", food_image: "yemek7", food_isLiked: "false", recipe: r)
+        let f5 = Food(food_id: 5, food_name: "Yemek 5", food_image: "yemek7", food_isLiked: "true", recipe: r)
+        let f6 = Food(food_id: 6, food_name: "Yemek 6", food_image: "yemek7", food_isLiked: "false", recipe: r)
+        let f7 = Food(food_id: 7, food_name: "Yemek 7", food_image: "yemek7", food_isLiked: "true", recipe: r)
         
         foodListesi = [f1,f2,f3,f4,f5,f6,f7]
-        
 
+        trendListesi = foodListesi.filter {(like) -> Bool in
+            return like.food_isLiked == "true"
+        }
         
     }
     
+    //MARK: - configureCollectionUI
     func configureCollectionUI(){
         //Trend
         trendCollectionView.tag = 0
@@ -74,6 +70,7 @@ class HomeViewController: UIViewController {
     }
 }
 
+//MARK: - UICollectionViewDelegate,UICollectionViewDataSource, Prepare
 extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView.tag == 0{
@@ -85,15 +82,13 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView.tag == 0{
-            
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "trendCell", for: indexPath) as! TrendCell
             let trend = trendListesi[indexPath.row]
             
-            cell.trend = trend
+            cell.food = trend
+            
             return cell
-            
         }else{
-            
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "foodCell", for: indexPath) as! FoodCell
             let food = foodListesi[indexPath.row]
             cell.food = food
@@ -101,7 +96,21 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView.tag == 0{
+            let food = trendListesi[indexPath.row]
+            performSegue(withIdentifier: "toDetails", sender: food)
+        }else{
+            let food = foodListesi[indexPath.row]
+            performSegue(withIdentifier: "toDetails", sender: food)
+        }
+    }
     
-    
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetails"{
+            let food = sender as? Food
+            let destinationVC = segue.destination as! FoodDetailsViewController
+            destinationVC.food = food
+        }
+    }
 }

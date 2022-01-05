@@ -38,6 +38,7 @@ class FoodCell: UICollectionViewCell {
         
         foodImageView.image = UIImage(named: viewModel.foodImageView)
         foodNameLabel.text = viewModel.foodName
+        
     }
     
     required init?(coder: NSCoder) {
